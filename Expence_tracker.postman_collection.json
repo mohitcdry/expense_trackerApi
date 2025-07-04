@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "3cea38ed-3086-4bd5-96ee-5377235c2e0a",
+		"name": "Expence_tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37093714"
+	},
+	"item": [
+		{
+			"name": "authentication_endpoints",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vrit\",\n    \"password\": \"vrit123\",\n    \"email\": \"vrit@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"vrit\",\n    \"password\": \"vrit123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jwt_refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MTcyMjQ4NCwiaWF0IjoxNzUxNjM2MDg0LCJqdGkiOiI4ZDlhYmE1MTE2ZDE0ZGM3OTQ1ZGQ5NmM3MmQ0M2JlMyIsInVzZXJfaWQiOjR9.vFxRPFQwa2m5Cv1g8L_828ihyRwVWpSBjOI4rqfJy3A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense&income_endponts",
+			"item": [
+				{
+					"name": "list_users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjM4MTY2LCJpYXQiOjE3NTE2Mzc4NjYsImp0aSI6IjRiZDc2NDVjNzY5MjQ0NmU4NmU0ZTUyYTBlN2VkMmUwIiwidXNlcl9pZCI6NH0.krCQJ5PQrcOrEOdK0aFyVKmlYA9ghfn8M2jKr2JNvrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/expenses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"expenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_new_record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjM4MTY2LCJpYXQiOjE3NTE2Mzc4NjYsImp0aSI6IjRiZDc2NDVjNzY5MjQ0NmU4NmU0ZTUyYTBlN2VkMmUwIiwidXNlcl9pZCI6NH0.krCQJ5PQrcOrEOdK0aFyVKmlYA9ghfn8M2jKr2JNvrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"id\": 10,\n    \"title\": \"Restaurant Bill\",\n    \"description\": \"Dinner with friends\",\n    \"amount\": 80.00,\n    \"transaction_type\": \"debit\",\n    \"tax\": 8.00,\n    \"tax_type\": \"flat\",\n    \"total\": 88.00,\n    \"created_at\": \"2025-06-10T19:00:00Z\",\n    \"updated_at\": \"2025-06-10T19:00:00Z\"\n  }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/expenses/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"expenses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_by_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjM4NTIyLCJpYXQiOjE3NTE2MzgyMjIsImp0aSI6IjJiODU2MjQ4ZTg3MzRhYzVhYmFmYTQ1YzNkNGE3YTNkIiwidXNlcl9pZCI6NH0.hn1QskbLVdWUSvMTR1RLEhFmZSFEku4NCPUUIk2-ys4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"id\": 10,\n    \"title\": \"Restaurant Bill\",\n    \"description\": \"Dinner with friends\",\n    \"amount\": 80.00,\n    \"transaction_type\": \"debit\",\n    \"tax\": 8.00,\n    \"tax_type\": \"flat\",\n    \"total\": 88.00,\n    \"created_at\": \"2025-06-10T19:00:00Z\",\n    \"updated_at\": \"2025-06-10T19:00:00Z\"\n  }"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/expenses/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"expenses",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxNjM4NTIyLCJpYXQiOjE3NTE2MzgyMjIsImp0aSI6IjJiODU2MjQ4ZTg3MzRhYzVhYmFmYTQ1YzNkNGE3YTNkIiwidXNlcl9pZCI6NH0.hn1QskbLVdWUSvMTR1RLEhFmZSFEku4NCPUUIk2-ys4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/expenses/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"expenses",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

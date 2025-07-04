@@ -131,10 +131,6 @@ All requests to protected endpoints must include an `Authorization` header with 
 
 ---
 
-## Running Tests
-
-A comprehensive test suite is included to validate all functionality. To run the tests, execute the following command:
-
 ```bash
 python manage.py test expenses
 ```

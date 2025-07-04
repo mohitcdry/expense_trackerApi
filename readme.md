@@ -129,12 +129,6 @@ All requests to protected endpoints must include an `Authorization` header with 
 }
 ```
 
----
-
-```bash
-python manage.py test expenses
-```
-
 ## Postman Collection
 
 A Postman collection is available in the root directory: `Expence_tracker.postman_collection.json`. You can import this into Postman to easily test all API endpoints.
